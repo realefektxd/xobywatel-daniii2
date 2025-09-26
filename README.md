@@ -1,2 +1,2 @@
-# xobywatel-daniii2
-asdfasdasd
+# gruby-xobywatel
+xobywatel dla grubego

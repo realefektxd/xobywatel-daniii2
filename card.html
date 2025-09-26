@@ -1,0 +1,253 @@
+<head>
+    <title>mObywatel</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <link rel="stylesheet" href="assets/app/main.css">
+    <link rel="stylesheet" href="assets/app/card.css">
+    <link rel="icon" type="image/x-icon" href="assets/app/images/logo_large.png">
+    <link rel="apple-touch-icon" href="assets/app/images/logo_large.png">
+    <link rel="shortcut icon" href="assets/app/images/logo_large.png">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=0.8, user-scalable=no">
+    <meta name="mobile-web-app-capable" content="yes">
+</head>
+<body>
+    <div class="top_grid_fixed">
+        <div class="action_grid_fixed">
+            <img src="assets/app/images/back_blue.png" class="back_img_fixed">
+            <p onclick="sendTo('documents')" class="back_text_fixed">Wróć</p>
+        </div>
+        <p class="title_text_fixed">mDowód</p>
+        <img src="assets/app/images/help.png" class="help_img_fixed">
+    </div>
+    <div class="bottom_bar">
+        <div class="bottom_bar_grid">
+
+            <div class="bottom_element_grid" send="documents">
+                <div class="bottom_element_image documents"></div>
+                <p class="bottom_element_text">Dokumenty</p>
+            </div>
+            <div class="bottom_element_grid" send="services">
+                <div class="bottom_element_image services"></div>
+                <p class="bottom_element_text">Usługi</p>
+            </div>
+            <div class="bottom_element_grid" send="qr">
+                <div class="bottom_element_image qr"></div>
+                <p class="bottom_element_text">Kod QR</p>
+            </div>
+            <div class="bottom_element_grid" send="more">
+                <div class="bottom_element_image more"></div>
+                <p class="bottom_element_text">Więcej</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <p class="time_text" id="time"></p>
+        <div class="id_image_data">
+            <img draggable="false" class="id_image" src="assets/app/images/plate.png">
+            <div class="inset">
+    
+            </div>
+            <!-- ZAMIANA: wstawiamy link example.com w miejsce zdjęcia osoby -->
+            <a href="https://i.ibb.co/LdpkfsZs/dodowod.png" target="_blank">
+                <img src="https://i.ibb.co/LdpkfsZs/dodowod.png" class="id_own_image" alt="Zdjęcie osoby" draggable="false" style="filter: grayscale(100%);">
+            </a>
+            <img draggable="false" src="assets/app/images/flag.webp" class="flag_video">
+            <img draggable="false" src="assets/app/images/eagle.gif" class="eagle_video">
+            <p class="eagle_text">Rzeczpospolita<br>Polska</p>
+            <div class="id_data_grid">
+                <div class="data_holder">
+                    <p class="data_title firstname" id="name">MACIEJ</p>
+                    <p class="data_value">Imię (imiona)</p>
+                </div>
+                <div class="data_holder">
+                    <p class="data_title surname" id="surname">ZIELIŃSKI</p>
+                    <p class="data_value">Nazwisko</p>
+                </div>
+                <div class="data_holder">
+                    <p class="data_title" id="nationality">POLSKIE</p>
+                    <p class="data_value">Obywatelstwo</p>
+                </div>
+                <div class="data_holder">
+                    <p class="data_title" id="birthday">09.12.2007</p>
+                    <p class="data_value">Data urodzenia</p>
+                </div>
+                <div class="data_holder">
+                    <p class="data_title" id="pesel">07320924680</p>
+                    <p class="data_value">Numer PESEL</p>
+                </div>
+            </div>
+        </div>
+        <div class="id_bottom">
+            <div class="bottom_grid">
+                <img class="bottom_image" src="assets/app/images/valid.png">
+                <p class="bottom_text" style="color: #317C26; font-weight: 600; font-size: 16px; margin-left: 20px;">Dokument ważny</p>
+            </div>
+        </div>
+        <div class="under_container">
+            <div class="under_grid">
+                <div class="under_icon" onclick="sendTo('scan', 'card')">
+                    <div class="under_image_circle">
+                        <img class="under_image" src="assets/app/images/confirm.png">
+                    </div>
+                    <p class="under_text">Potwierdź swoje dane</p>
+                </div>
+                <div class="under_icon" onclick="sendTo('document')">
+                    <div class="under_image_circle">
+                        <img class="under_image minidowud_icon" src="assets/app/images/card.png">
+                    </div>
+                    <p class="under_text">Dane dowodu osobistego</p>
+                </div>
+                <div class="under_icon" onclick="sendTo('pesel')">
+                    <div class="under_image_circle">
+                        <img class="under_image" src="assets/app/images/lock.png">
+                    </div>
+                    <p class="under_text">Zastrzeż PESEL</p>
+                </div>
+                <div class="under_icon" onclick="sendTo('shortcuts')">
+                    <div class="under_image_circle">
+                        <img class="under_image" src="assets/app/images/more.png">
+                    </div>
+                    <p class="under_text">Pozostałe skróty</p>
+                </div>
+            </div>
+        </div>
+        <div class="confirm_info">
+            <div class="confirm_box">
+                <p class="box_top">Seria i numer</p>
+                <p class="box_value box_highlight" id="seriesAndNumber">ARJ 183426</p>
+                <button class="main_button">Kopiuj</button>
+            </div>
+            <div class="confirm_box">
+                <p class="box_top">Termin ważności</p>
+                <p class="box_value" id="expiryDate">16.12.2035</p>
+            </div>
+            <div class="confirm_box">
+                <p class="box_top">Data wydania</p>
+                <p class="box_value" id="givenDate">13.12.2025</p>
+            </div>
+            <div class="confirm_box">
+                <p class="box_top">Imię ojca</p>
+                <p class="box_value" id="fathersName">TADEUSZ</p>
+            </div>
+            <div class="confirm_box" style="border: none;">
+                <p class="box_top">Imię matki</p>
+                <p class="box_value" id="mothersName">MONIKA</p>
+            </div>
+        </div>
+        <div class="other_grid">
+            <div class="bottom_holder info_holder">
+                <div class="bottom_grid">
+                    <p class="bottom_text" style="color: #1f2125; margin-left: 0px;">Twoje dodatkowe dane</p>
+                </div>
+                <img class="action_arrow" src="assets/app/images/right_arrow.png">
+                <div class="additional_holder">
+                    <div class="additional_grid">
+                        <p class="additional_title">Nazwisko rodowe</p>
+                        <p class="additional_subtitle" id="familyName">BRAK</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Płeć</p>
+                        <p class="additional_subtitle" id="sex">MĘŻCZYZNA</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Nazwisko rodowe ojca</p>
+                        <p class="additional_subtitle" id="fathersFamilyName">BRAK</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Nazwisko rodowe matki</p>
+                        <p class="additional_subtitle" id="mothersFamilyName">BRAK</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Miejsce urodzenia</p>
+                        <p class="additional_subtitle" id="birthPlace">WARSZAWA</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Kraj urodzenia</p>
+                        <p class="additional_subtitle" id="countryOfBirth">POLSKA</p>
+                    </div>
+                    <div class="additional_grid">
+                        <p class="additional_title">Adres zameldowania na pobyt stały</p>
+                        <p class="additional_subtitle" id="adress">WARSZAWA, 58-573, MARSZAŁKOWSKA 15/7</p>
+                    </div>
+                    <div class="additional_grid" style="border-bottom: none; margin-bottom: 0px;">
+                        <p class="additional_title">Data zameldowania na pobyt stały</p>
+                        <p class="additional_subtitle home_date">08.01.2007</p> 
+                    </div>
+                </div>  
+            </div>
+            <div class="bottom_holder" style="height: 95px; margin-bottom: 120px;">
+                <div class="bottom_update">
+                    <div class="bottom_update_grid">
+                        <p class="bottom_update_text" style="margin-left: 0px;">Ostatnia aktualizacja</p>
+                        <p class="bottom_update_value" style="margin-left: 0px;"></p>
+                    </div>
+                    <button class="main_button update">Aktualizuj</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<script>
+  const data = JSON.parse(localStorage.getItem('cardData'));
+  if (data) {
+    // Główne dane
+    document.getElementById('name').textContent = data.name || '';
+    document.getElementById('surname').textContent = data.surname || '';
+    document.getElementById('nationality').textContent = data.nationality || '';
+    document.getElementById('birthday').textContent = `${data.day?.toString().padStart(2, '0')}.${data.month?.toString().padStart(2, '0')}.${data.year}` || '';
+    document.getElementById('fathersName').textContent = data.fathersName || '';
+    document.getElementById('mothersName').textContent = data.mothersName || '';
+
+    // Dodatkowe dane
+    document.getElementById('familyName').textContent = data.familyName || '';
+    document.getElementById('sex').textContent = data.sex === 'm' ? 'Mężczyzna' : 'Kobieta' || '';
+    document.getElementById('fathersFamilyName').textContent = data.fathersFamilyName || '';
+    document.getElementById('mothersFamilyName').textContent = data.mothersFamilyName || '';
+    document.getElementById('birthPlace').textContent = data.birthPlace || '';
+    document.getElementById('countryOfBirth').textContent = data.countryOfBirth || '';
+    document.getElementById('adress').textContent = `${data.address1}, ${data.address2} ${data.city}` || '';
+    
+    // Dane z localStorage (generowane przez generator.js)
+    document.getElementById('seriesAndNumber').textContent = localStorage.getItem('seriesAndNumber') || '';
+    document.getElementById('expiryDate').textContent = localStorage.getItem('expiryDate') || '';
+    document.getElementById('givenDate').textContent = localStorage.getItem('givenDate') || '';
+    document.getElementById('pesel').textContent = localStorage.getItem('pesel') || '';
+    
+    // Data zameldowania
+    const homeDate = localStorage.getItem('homeDate');
+    if (homeDate) {
+      document.querySelector('.home_date').textContent = homeDate;
+    }
+    
+    // Zdjęcie
+    if (data.image) {
+      document.querySelector('.id_own_image').style.backgroundImage = `url(${data.image})`;
+    }
+  }
+  
+  // Ustaw czas
+  function updateTime() {
+    const now = new Date();
+    const timeString = `Czas: ${now.toLocaleTimeString("pl-PL")} ${now.toLocaleDateString("pl-PL")}`;
+    document.getElementById('time').textContent = timeString;
+  }
+  
+  updateTime();
+  setInterval(updateTime, 1000);
+  
+  // Ustaw datę ostatniej aktualizacji
+  const updateElement = document.querySelector('.bottom_update_value');
+  if (updateElement) {
+    updateElement.textContent = localStorage.getItem('update') || '24.12.2024';
+  }
+</script>
+
+    <script src="assets/app/encode.js"></script>
+    <script src="assets/app/bar.js"></script>
+    <script src="assets/app/card.js"></script>
+    <script src="assets/app/manifest.js"></script>
+    <script src="assets/cache.js"></script>
+</body>
